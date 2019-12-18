@@ -28,6 +28,16 @@ li,p{
   font-size:2.369em
 }
 
+ul{
+  list-style-type: none;
+}
+
+figure,img{
+  max-width: 100%;
+
+}
+
+
 header{
   background-color: var(--primary-color);
   text-align:center;
