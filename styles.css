@@ -4,3 +4,17 @@ html {
   --text-primary-color:#C34A36;
   --text-secondary-color:
 }
+
+h1{
+  color:var(--text-primary-color)
+}
+
+
+body{
+
+  background: url("https://i.kinja-img.com/gawker-media/image/upload/s--D-QDX4dS--/c_scale,f_auto,fl_progressive,q_80,w_800/gulvnt50acjzvtjpgywv.jpg");
+  background-repeat:no-repeat;
+  background-size: contain;
+  background-position: top left
+  height: 100vh
+}
