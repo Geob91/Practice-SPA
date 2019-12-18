@@ -11,10 +11,6 @@ h1{
 
 
 body{
+  font-family:'Carter One', cursive;
 
-  background: url("https://i.kinja-img.com/gawker-media/image/upload/s--D-QDX4dS--/c_scale,f_auto,fl_progressive,q_80,w_800/gulvnt50acjzvtjpgywv.jpg");
-  background-repeat:no-repeat;
-  background-size: contain;
-  background-position: top left
-  height: 100vh
 }
