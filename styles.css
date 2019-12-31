@@ -1,62 +1,163 @@
+/* Rules outside of any media queries apply to all devices (mobile-first). */
 html {
-  --primary-color:#2C73D2;
-  --secondary-color:#00C9A7;
-  --text-primary-color:#C34A36;
-  --text-secondary-color:
+  --primary-color: #845ec2;
+  --secondary-color: #b39cd0;
+  --text-primary-color: #fbeaff;
+  --text-secondary-color: #00c9a7;
 }
 
-body{
-  font-family:'Carter One', cursive;
-  font-size:10px;
-
+body {
+  font-family: "PT Sans", sans-serif;
+  font-size: 10px;
+  height: 100vh; /* viewport heights */
 }
 
-h1{
-  color:var(--text-primary-color);
-  font-size:3.052em;
+h1 {
+  color: var(--text-primary-color);
+  font-size: 4.209em;
 }
 
-h2{
-
+h2 {
+  font-size: 3.157em;
 }
 
-h3{
-
+h3 {
+  font-size: 2.369em;
 }
 
-li,p{
-  font-size:2.369em
+li,
+p,
+label,
+input,
+button {
+  font-size: 1.777em;
 }
 
-nav ul{
-  display:flex;
-  justify-content: space-around;
+figure,
+img {
+  /* Limit the width of all 'figures' and 'imgs' to be at most 100% of the size of the parent. */
+  max-width: 100%;
 }
 
-ul{
+header {
+  background-color: var(--primary-color);
+  padding: 1rem;
+  text-align: center;
+}
+
+ul {
   list-style-type: none;
   padding: 0;
 }
 
-figure,img{
-  max-width: 100%;
-
-}
-
-
-header{
-  background-color: var(--primary-color);
-  text-align:center;
-  padding: 1rem;
-}
-
-p{
-  padding:0 2.5rem;
+p {
+  /* First number is top and bottom.
+    Second number is left and right. */
+  padding: 0 2.5rem;
   text-align: center;
 }
 
-footer{
-  text-align:center;
-  background: var(--secondary-color);
+form {
+  padding: 1rem;
+}
+
+/* A space is a general child selector, so we are selecting ANY divs that are children of a form. */
+form div {
+  margin-bottom: 0.5rem;
+  max-width: 18rem;
+  width: 78vw;
+}
+
+label {
+  margin-right: 0.25rem;
+}
+
+input {
+  border: solid thin var(--primary-color);
+  border-radius: 3px;
+}
+
+footer {
+  background: var(--primary-color);
+  color: var(--text-primary-color);
   padding: 1.5rem;
+  text-align: center;
+}
+
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#gallery div {
+  background-color: magenta;
+  border-radius: 0.5rem;
+  box-shadow: 12px 12px 2px 1px rgba(255, 0, 255, 0.6);
+  margin: 2rem;
+  width: calc(33vw - 1rem);
+  text-align:center;
+}
+
+.button {
+  background: var(--secondary-color);
+  border-radius: 3px;
+  padding: 0.5rem;
+}
+
+.button--submit {
+  background-color: green;
+  color: white;
+}
+
+.button a {
+  text-decoration: none;
+}
+
+/* If your width and height are the same,
+  border-radius: 50% will make it look like a circle. */
+.button--circle {
+  border-radius: 50%;
+  height: 8rem;
+  width: 8rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-space-around {
+  justify-content: space-around;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+/* We set a breakpoint of 768px. */
+@media screen and (min-width: 768px) {
+  form {
+    padding: 1rem 0;
+  }
+
+  form > div {
+    max-width: none;
+  }
+
+  .flex--sm {
+    display: flex;
+  }
+}
+
+@media screen and (min-width: 885px) {
+  #hero {
+    background: url(https://source.unsplash.com/random/800x600) top center
+      no-repeat;
+    background-size: cover;
+    height: 75vh;
+    width: 100vw;
+  }
 }
