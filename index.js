@@ -17,15 +17,19 @@ const state = {
   }
 };
 
-document.querySelector("#root").innerHTML = `
-${Header(state.Home)}
-${Nav()}
-${Main()}
-${Footer()}`;
+function render(st = state.Home) {
+  document.querySelector("#root").innerHTML = `
+${Header(st)}
+${Nav(st)}
+${Main(st)}
+${Footer(st)}`;
+}
+
+render();
 
 document.querySelectorAll("nav a").forEach(link => {
   link.addEventListener("click", function(event) {
     event.preventDefault();
-    console.log(state[event.target.textContent]);
+    render(state[event.target.textContent]);
   });
 });
