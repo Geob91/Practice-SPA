@@ -1,5 +1,5 @@
-export default () =>
+export default st =>
   `
   <header>
-<h1>Mental Health Made Simple</h1>
+<h1>${st.heading}</h1>
 </header>`;

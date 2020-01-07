@@ -18,7 +18,14 @@ const state = {
 };
 
 document.querySelector("#root").innerHTML = `
-${Header()}
+${Header(state.Home)}
 ${Nav()}
 ${Main()}
 ${Footer()}`;
+
+document.querySelectorAll("nav a").forEach(link => {
+  link.addEventListener("click", function(event) {
+    event.preventDefault();
+    console.log(state[event.target.textContent]);
+  });
+});
