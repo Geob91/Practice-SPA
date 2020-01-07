@@ -1,4 +1,6 @@
-export default `<main>
+export default () =>
+  `
+<main>
 <div id="yoga">
 ​
 </div>
