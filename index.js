@@ -23,13 +23,13 @@ ${Header(st)}
 ${Nav(st)}
 ${Main(st)}
 ${Footer(st)}`;
+
+  document.querySelectorAll("nav a").forEach(link => {
+    link.addEventListener("click", function(event) {
+      event.preventDefault();
+      render(state[event.target.textContent]);
+    });
+  });
 }
 
 render();
-
-document.querySelectorAll("nav a").forEach(link => {
-  link.addEventListener("click", function(event) {
-    event.preventDefault();
-    render(state[event.target.textContent]);
-  });
-});
