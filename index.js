@@ -1,5 +1,9 @@
 import { Header, Nav, Main, Footer } from "./components";
 
+import capitalize from "lodash.capitalize";
+
+console.log(capitalize("hello"));
+
 //console.log(Header, Footer, Main, Nav);
 
 const state = {
@@ -14,13 +18,14 @@ const state = {
   },
   Gallery: {
     heading: "Gallery"
-  }
+  },
+  Links: ["Home", "Form", "Blog", "Gallery"]
 };
 
 function render(st = state.Home) {
   document.querySelector("#root").innerHTML = `
 ${Header(st)}
-${Nav(st)}
+${Nav(state.Links)}
 ${Main(st)}
 ${Footer(st)}`;
 

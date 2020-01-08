@@ -1,10 +1,15 @@
-export default () =>
-  `​
+function createListHTML(links) {
+  return links
+    .map(link => `<li class ="button"><a href ="/">${link}</li>`)
+    .join("");
+}
+
+export default st => {
+  console.log(st);
+  return `​
 <nav>
   <ul>
-     <li class = "button"><a href="">Home</a></li>
-     <li class = "button"><a href="./form/index.html">Form</a></li>
-     <li class = "button"><a href="./quiz/index.html">Blog</a></li>
-     <li class = "button"><a href="./gallery/">Gallery</a></li>
+  ${createListHTML(st)}
   </ul>
 </nav>`;
+};
