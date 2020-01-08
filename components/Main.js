@@ -1,7 +1,11 @@
-import { Blog, Form, Gallery, Home } from "./views";
+import * as views from "./views";
 
-export default () =>
-  `
-<main>
+export default st => {
+  return `
+
+  <main>
+
+${views[st.mainContent]}
 
 </main>`;
+};
