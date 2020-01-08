@@ -4,7 +4,7 @@ function createListHTML(links) {
 
 export default st => {
   console.log(st);
-  return `​
+  return `
 <nav>
   <ul>
   ${createListHTML(st)}

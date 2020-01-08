@@ -1,4 +1,4 @@
 export default {
-  heading: "Form"
-  mainContent:"Form"
+  heading: "Form",
+  mainContent: "Form"
 };

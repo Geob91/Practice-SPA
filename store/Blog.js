@@ -1,4 +1,4 @@
 export default {
-  heading: "Blog"
-  mainContent:"Blog"
+  heading: "Blog",
+  mainContent: "Blog"
 };
