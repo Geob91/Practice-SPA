@@ -23,6 +23,8 @@
     "stylelint-vscode": "^7.0.0-6"
   },
   "dependencies": {
-    "lodash.capitalize": "^4.2.1"
+    "axios": "^0.19.1",
+    "lodash.capitalize": "^4.2.1",
+    "navigo": "^7.1.2"
   }
 }

@@ -4,9 +4,16 @@ import * as state from "./store";
 
 import capitalize from "lodash.capitalize";
 
-console.log(capitalize("hello"));
+import Navigo from "navigo";
 
+import axios from "axios";
+
+console.log("Navigo");
+
+console.log(location.pathname.slice(1));
 //console.log(Header, Footer, Main, Nav);
+
+const router = new Navigo(location.origin);
 
 function render(st = state.Home) {
   document.querySelector("#root").innerHTML = `
@@ -14,13 +21,21 @@ ${Header(st)}
 ${Nav(state.Links)}
 ${Main(st)}
 ${Footer(st)}`;
-
-  document.querySelectorAll("nav ul").forEach(link => {
-    link.addEventListener("click", function(event) {
-      event.preventDefault();
-      render(state[event.target.textContent]);
-    });
-  });
+  router.updatePageLinks();
 }
+router
+  .on(":page", params => {
+    render(state[capitalize(params.page)]);
+  })
+  .resolve();
 
 render();
+
+// 'fetch' returns a PROMISE.
+axios
+  .get("https://jsonplaceholder.typicode.com/posts")
+  .then(results => {
+    state.Blog.posts = results.data;
+    console.log(results);
+  })
+  .catch(error => console.error(error));
