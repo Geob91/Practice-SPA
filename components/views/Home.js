@@ -1,4 +1,4 @@
-export default `
+export default st => `
 <div id="yoga">
 
 </div>

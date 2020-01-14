@@ -5,7 +5,7 @@ export default st => {
 
   <main>
 
-${views[st.mainContent]}
+${views[st.mainContent](st)}
 
 </main>`;
 };
